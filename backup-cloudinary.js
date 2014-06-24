@@ -10,15 +10,25 @@ var CLOUD_NAME = "";
 var API_KEY = "";
 var API_SECRET = "";
 
-request("https://" + API_KEY + ":" + API_SECRET + "@api.cloudinary.com/v1_1/" + CLOUD_NAME + "/resources/image", function (error, response, body) {
+request("https://" + API_KEY + ":" + API_SECRET + "@api.cloudinary.com/v1_1/" + CLOUD_NAME + "/resources/image?max_results=500", function (error, response, body) {
     if (!error && response.statusCode == 200) {
 
-        imageData = JSON.parse(body).resources;
-        fs.mkdir(CLOUD_NAME);
+        var jsonResponse = JSON.parse(body);
 
-        for (image in imageData) {
-            console.log("Saving " + imageData[image].url);
-            request(imageData[image].url).pipe(fs.createWriteStream(CLOUD_NAME + "/" + imageData[image].public_id + '.' + imageData[image].format));
+        if(jsonResponse.next_cursor) {
+            console.error("You have more images on the server that can be accessed at once. Aborting..");
+            return;
+        }
+
+        var images = jsonResponse.resources;
+
+        console.log("About to download " + images.length + " images.");
+
+        fs.mkdir(CLOUD_NAME);
+        for (image in images) {
+         
+            console.log("Saving " + images[image].url);
+            request(images[image].url).pipe(fs.createWriteStream(CLOUD_NAME + "/" + images[image].public_id + '.' + images[image].format));
         }
     }
 });

@@ -1,9 +1,9 @@
 backup-cloudinary
 =================
 
-This script copies all images from a Cloudinary account to your local disk.
+This script copies all images (to a maximum of 500) from a Cloudinary account to your local disk.
 
-If your cloud name is "magician", then on running this script it'll copy all images from your account into a subdirectory called 'magician'.
+If your cloud name is "magician", then on running this script it'll download the images into a subdirectory called 'magician'.
 
 To get this working, you need to do 4 things.
 
