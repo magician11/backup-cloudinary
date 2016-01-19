@@ -1,0 +1,30 @@
+{
+  "name": "backup-cloudinary",
+  "version": "1.0.0",
+  "description": "get all images on your cloudinary account",
+  "main": "main.js",
+  "dependencies": {
+    "request": "^2.67.0",
+    "sanitize-filename": "^1.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-start": "npm install",
+    "start": "node main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ripper2hl/backup-cloudinary.git"
+  },
+  "keywords": [
+    "cloudinary",
+    "backup"
+  ],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/ripper2hl/backup-cloudinary/issues"
+  },
+  "homepage": "https://github.com/ripper2hl/backup-cloudinary#readme"
+}
