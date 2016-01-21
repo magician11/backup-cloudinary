@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ripper2hl/backup-cloudinary.git"
+    "url": "git+https://github.com/magician11/backup-cloudinary.git"
   },
   "keywords": [
     "cloudinary",
@@ -24,7 +24,7 @@
   "author": "",
   "license": "",
   "bugs": {
-    "url": "https://github.com/ripper2hl/backup-cloudinary/issues"
+    "url": "https://github.com/magician11/backup-cloudinary/issues"
   },
-  "homepage": "https://github.com/ripper2hl/backup-cloudinary#readme"
+  "homepage": "https://github.com/magician11/backup-cloudinary#readme"
 }
